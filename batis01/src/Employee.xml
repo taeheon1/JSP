@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Employee">
+  <typeAlias alias="Employee" type="test.Employee"/>
+  <resultMap id="EmployeeResult" class="Employee">
+    <result property="eno" column="ENO"/>
+    <result property="ename" column="ENAME"/>
+    <result property="hiredate" column="HIREDATE"/>
+  </resultMap>
+
+  <select id="selectAllEmployee" resultMap="EmployeeResult">
+    select * from EMP
+  </select>
+
+  <select id="selectEmployeeByEno" parameterClass="int" resultClass="Employee">
+    select
+      ENO, ENAME, HIREDATE
+    from EMP
+    where ENO = #eno#
+  </select>
+   
+  <insert id="insertEmployee" parameterClass="Employee">
+    insert into Employee (
+      ENO,
+      ENAME,
+      HIREDATE,
+    values (
+      #eno#, #ename#, #hiredate#
+    )
+  </insert>
+
+  <update id="updateEmployee" parameterClass="Employee">
+    update Employee set
+      ENO = #eno#,
+      ENAME = #ename#,
+      HIREDATE = #hiredate#
+    where
+      ENO = #eno#
+  </update>
+
+  <delete id="deleteEmployeeByEno" parameterClass="int">
+    delete from Employee where ENO = #eno#
+  </delete>
+</sqlMap>

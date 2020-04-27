@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test.EmpDAO">
+	<select id="list" resultType="test.Emp">
+		select ENO, ENAME, HIREDATE from
+		EMP order by ENO desc
+	</select>
+
+	<select id="info" resultType="test.Emp">
+		select
+		ENO, ENAME, HIREDATE
+		from EMP
+		where ENO = #{eno}
+	</select>
+
+	<insert id="insert" parameterType="test.Emp">
+		insert into Employee (
+		ENO,
+		ENAME,
+		HIREDATE,
+		values (
+		#{eno}, #{ename}, #{hiredate}
+		)
+	</insert>
+
+	<update id="update" parameterType="test.Emp">
+		update Employee set
+		ENO =
+		#{eno},
+		ENAME = #{ename},
+		HIREDATE = #{hiredate}
+		where
+		ENO = #{eno}
+	</update>
+
+	<delete id="delete">
+		delete from Employee where ENO = #{eno}
+	</delete>
+</mapper>
