@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div {
+	width: 200px;
+	height: 80px;
+	margin: 3px;
+	float: left;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#menu1").click(function() {
+			$.ajax({
+				url : 'menu.html',
+				dataType : "html",
+				success : function(data) {
+					$('message1').html(data);
+				}
+			});
+			return false;
+		});
+		("#menu2").click(function() {
+			$.ajax({
+				url : 'menu.html',
+				dataType : "html",
+				success : function(data) {
+					$('message2').html($(data).fine('li'));
+				}
+			});
+			return false;
+		});
+	});
+	//서버로 부터 응답받은 데이터는 콜백함수의 매개변수로 전달된다.
+</script>
+</head>
+<body>
+	<div>
+		<a href="#" id="menu1">메뉴 보기1</a>
+		<p>
+			<span id="message1"></span>
+		</p>
+	</div>
+	<div>
+		<a href="#" id="menu2">메뉴 보기2</a>
+		<p>
+			<span id="message2"></span>
+		</p>
+	</div>
+</body>
+</html>

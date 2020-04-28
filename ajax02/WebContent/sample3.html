@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div { width: 200px; height: 100px; margin: 5px; float: left;}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#menu1").click(function(){
+		$("#message").load("menu.html");
+	});
+	$('#menu2').click(function(){
+		$('#message2').load('menu.html li');
+		return false;
+	});
+});
+</script>
+</head>
+<body>
+<div><a href="#" id="menu1">메뉴 보기1</a>
+<p><span id="message1"></span></p></div>
+<div><a href="#" id="menu2">메뉴 보기2</a>
+<p><span id="message2"></span></p></div>
+</body>
+</html>

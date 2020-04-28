@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+	<item id="1" name="레몬">
+		<price>3000</price>
+		<description>레몬에 포함되어있는 쿠엔산은 피로회복에 좋다. 비타민 C풍부</description>
+	</item>
+	<item id="2" name="키위">
+		<price>2000</price>
+		<description>비타민 C풍부 다이어트 피부미용 굿</description>
+	</item>
+	<item id="3" name="블루베리">
+		<price>5000</price>
+		<description>블루베리에 포함된 안토사이닌은 눈피로에 굿</description>
+	</item>
+	<item id="4" name="체리">
+		<price>5000</price>
+		<description>체리는 맛이 단 성분이 많고 피로회복에 잘 듣는다.</description>
+	</item>
+	<item id="5" name="메론">
+		<price>5000</price>
+		<description>메론은 비타민 A와 칼륨이 많이 포함되어 있다.</description>
+	</item>
+</items>
