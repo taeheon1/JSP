@@ -1,0 +1,22 @@
+
+create table tb_board (
+	board_no number primary key,
+	board_title varchar2(50) not null,
+	board_write varchar2(50) not null,
+	board_content varchar2(1000) not null,
+	board_regdate date,
+	group_no number
+) SEGMENT CREATION IMMEDIATE;
+
+
+CREATE SEQUENCE board_seq;
+
+
+create table tb_comment(
+	comment_no number primary key,
+	comment_wirter varchar2(50),
+	comment_content varchar2(200),
+	comment_regdate date,
+	board_no number
+);
+
